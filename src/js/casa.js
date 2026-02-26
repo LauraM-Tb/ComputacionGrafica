@@ -24,14 +24,14 @@ controls.update();
 //////////////////////////////////////////////////////////////
 // CASA
 
-// Color Base
+// Base
 const base = new THREE.Mesh(
   new THREE.BoxGeometry(3, 2, 3),
   new THREE.MeshBasicMaterial({ color: 0x00008B }) 
 );
 scene.add(base);
 
-// Color Techo
+// Techo
 const roof = new THREE.Mesh(
   new THREE.ConeGeometry(2.5, 1.5, 4),
   new THREE.MeshBasicMaterial({ color: 0x000000 }) // Negro
