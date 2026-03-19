@@ -37,15 +37,15 @@ const materialPhong = new THREE.MeshPhongMaterial( { color: 0xffffff,
   specular: 0xffffff,
   shininess: 30,
   side: THREE.DoubleSide,
-  map: new THREE.TextureLoader().load( '../../portfolio/class6/img/uv_test_bw_1024.png' ) //https://threejs.org/examples/textures/uv_grid_opengl.jpg
+  map: new THREE.TextureLoader().load('../../portafolio/class6/img/uv_test_bw_1024.png') //https://threejs.org/examples/textures/uv_grid_opengl.jpg
 } );
 
-const materialCube = [new THREE.MeshStandardMaterial( { map: new THREE.TextureLoader().load( '../../portfolio/class6/img/face1.jpg'), side: THREE.DoubleSide},
-                        new THREE.MeshStandardMaterial( { map: new THREE.TextureLoader().load( '../../portfolio/class6/img/face2.png'), side: THREE.DoubleSide},
-                        new THREE.MeshStandardMaterial( { map: new THREE.TextureLoader().load( '../../portfolio/class6/img/face3.jpg'), side: THREE.DoubleSide},
-                        new THREE.MeshStandardMaterial( { map: new THREE.TextureLoader().load( '../../portfolio/class6/img/face4.jpg'), side: THREE.DoubleSide},
-                        new THREE.MeshStandardMaterial( { map: new THREE.TextureLoader().load( '../../portfolio/class6/img/face5.png'), side: THREE.DoubleSide},
-                        new THREE.MeshStandardMaterial( { map: new THREE.TextureLoader().load( '../../portfolio/class6/img/face6.jpg'), side: THREE.DoubleSide}
+const materialCube = [new THREE.MeshStandardMaterial( { map: new THREE.TextureLoader().load( '../../portafolio/class6/img/face1.jpg'), side: THREE.DoubleSide},
+                        new THREE.MeshStandardMaterial( { map: new THREE.TextureLoader().load('../../portafolio/class6/img/face2.jpg'), side: THREE.DoubleSide},
+                        new THREE.MeshStandardMaterial( { map: new THREE.TextureLoader().load('../../portafolio/class6/img/face3.jpg'), side: THREE.DoubleSide},
+                        new THREE.MeshStandardMaterial( { map: new THREE.TextureLoader().load('../../portafolio/class6/img/face4.jpg'), side: THREE.DoubleSide},
+                        new THREE.MeshStandardMaterial( { map: new THREE.TextureLoader().load('../../portafolio/class6/img/face5.jpg'), side: THREE.DoubleSide},
+                        new THREE.MeshStandardMaterial( { map: new THREE.TextureLoader().load( '../../portafolio/class6/img/face6.jpg'), side: THREE.DoubleSide}
 ) ) ) ) ) )
 ];
 
