@@ -49,3 +49,11 @@ body {
     width: 380px;
     max-width: 100%;
 }
+
+.myCreateElement {
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    margin-top: 2%;
+     margin-left: 2%;
+}
