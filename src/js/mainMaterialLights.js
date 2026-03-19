@@ -51,7 +51,7 @@ const materialCube = [new THREE.MeshStandardMaterial( { map: new THREE.TextureLo
 
 const materialLambert = new THREE.MeshLambertMaterial( { color: 0xffffff,
                                                           side: THREE.DoubleSide,
-                                                          map: new THREE.TextureLoader().load( '../../portfolio/class6/img/face1.jpg' ) //https://threejs.org/examples/textures/uv_grid_opengl.jpg
+                                                          map: new THREE.TextureLoader().load( '../../portafolio/class6/img/face1.jpg' ) //https://threejs.org/examples/textures/uv_grid_opengl.jpg
 } );
 
 
