@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     background-color: rgb(100, 161, 218);
@@ -6,9 +7,10 @@ html, body {
     width: 100%;
 }
 
-/* --- MODEL VIEWER --- */
+/* MODEL VIEWER */
+
 model-viewer {
-    width: 100vw;
+    width: 100%;
     height: 70vh;
     display: block;
     margin: -4rem auto 0 auto;
@@ -16,68 +18,79 @@ model-viewer {
     outline: none;
     position: relative;
     z-index: 1;
+    overflow-x: hidden;
 }
 
-/* --- TITULO FRIEREN --- */
+/* TITULO */
 
-.frieren-title{
-    width:100%;
-    margin:2rem auto 0 auto;
-    text-align:center;
+.frieren-title {
+    width: 100%;
+    margin: 2rem auto 0 auto;
+    text-align: center;
     font-family: 'Cinzel', serif;
 }
 
-.frieren-title h1{
-    font-size:7rem;
-    letter-spacing:8px;
-    color:#e8d7a3;
-    margin:0;
+.frieren-title h1 {
+
+    font-size: 7rem;
+    letter-spacing: 8px;
+    color: #e8d7a3;
+    margin: 0;
 
     text-shadow:
         0 0 10px #d4c28a,
         0 0 20px #b8a86d,
-        0 0 40px rgba(0,0,0,0.6);
+        0 0 40px rgba(0, 0, 0, 0.6);
+
 }
 
-.frieren-title h2{
-    font-size:2rem;
-    letter-spacing:5px;
-    color:white;
-    margin-top:5px;
+.frieren-title h2 {
 
-    text-shadow:0 0 10px rgba(0,0,0,0.7);
+    font-size: 2rem;
+    letter-spacing: 5px;
+    color: white;
+    margin-top: 5px;
+
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+
 }
 
-/******************************/
-/* This keeps child nodes hidden while the element loads */
+/* LOAD FIX */
 
-:not(:defined) > * {
+:not(:defined)>* {
     display: none;
 }
 
-model-viewer {
-    overflow-x: hidden;
-}
+/* AR BUTTON */
 
 #ar-button {
+
     background-image: url(../img/btn.png);
     background-repeat: no-repeat;
     background-size: 20px 20px;
     background-position: 12px 50%;
     background-color: #fff;
+
     position: absolute;
+
     left: 50%;
     transform: translateX(-50%);
-    white-space: nowrap;
+
     bottom: 132px;
+
     padding: 0px 16px 0px 40px;
-    font-family: Roboto Regular, Helvetica Neue, sans-serif;
+
+    font-family: Roboto, sans-serif;
     font-size: 14px;
-    color:#4285f4;
+
+    color: #4285f4;
+
     height: 36px;
     line-height: 36px;
+
     border-radius: 18px;
     border: 1px solid #DADCE0;
+
 }
 
 #ar-button:active {
@@ -92,75 +105,130 @@ model-viewer {
     outline: 1px solid #4285f4;
 }
 
+/* ANIMACIONES */
+
 @keyframes circle {
-    from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
-    to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+
+    from {
+        transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg);
+    }
+
 }
 
 @keyframes elongate {
-    from { transform: translateX(100px); }
-    to   { transform: translateX(-100px); }
+
+    from {
+        transform: translateX(100px);
+    }
+
+    to {
+        transform: translateX(-100px);
+    }
+
 }
 
-model-viewer > #ar-prompt {
+/* AR PROMPT */
+
+model-viewer>#ar-prompt {
+
     position: absolute;
+
     left: 50%;
+
     bottom: 175px;
+
     animation: elongate 2s infinite ease-in-out alternate;
+
     display: none;
+
 }
 
-model-viewer[ar-status="session-started"] > #ar-prompt {
+model-viewer[ar-status="session-started"]>#ar-prompt {
     display: block;
 }
 
-model-viewer > #ar-prompt > img {
+model-viewer>#ar-prompt>img {
     animation: circle 4s linear infinite;
 }
 
-model-viewer > #ar-failure {
+/* AR FAILURE */
+
+model-viewer>#ar-failure {
+
     position: absolute;
+
     left: 50%;
     transform: translateX(-50%);
+
     bottom: 175px;
+
     display: none;
+
 }
 
-model-viewer[ar-tracking="not-tracking"] > #ar-failure {
+model-viewer[ar-tracking="not-tracking"]>#ar-failure {
     display: block;
 }
 
-/* --- SLIDER --- */
+/* SLIDER */
 
 .slider {
+
     width: 100%;
+
     text-align: center;
+
     overflow: hidden;
+
     position: absolute;
+
     bottom: 16px;
+
 }
 
 .slides {
+
     display: flex;
+
     overflow-x: auto;
+
     scroll-snap-type: x mandatory;
+
     scroll-behavior: smooth;
+
     -webkit-overflow-scrolling: touch;
+
 }
 
 .slide {
+
     scroll-snap-align: start;
+
     flex-shrink: 0;
+
     width: 100px;
     height: 100px;
+
     background-size: contain;
+
     background-repeat: no-repeat;
+
     background-position: center;
+
     background-color: #fff;
+
     margin-right: 10px;
+
     border-radius: 10px;
+
     border: none;
+
     display: flex;
+
 }
 
 .slide.selected {
@@ -173,4 +241,29 @@ model-viewer[ar-tracking="not-tracking"] > #ar-failure {
 
 .slide:focus-visible {
     outline: 1px solid #4285f4;
+}
+
+
+
+@media (max-width:768px) {
+
+    .frieren-title h1 {
+        font-size: 3rem;
+        letter-spacing: 4px;
+    }
+
+    .frieren-title h2 {
+        font-size: 1.2rem;
+    }
+
+    model-viewer {
+        height: 60vh;
+        margin-top: 0;
+    }
+
+    .slide {
+        width: 70px;
+        height: 70px;
+    }
+
 }
