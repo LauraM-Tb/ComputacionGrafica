@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Modeling</title>
+
+    <!-- 🔥 FUENTE CINZEL -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../src/css/characters.css">
+
+    <!-- model viewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+
+    <!-- BOTON BACK -->
+    <button class="back-button" onclick="goBack()">←</button>
+
+    <!-- TITULO -->
+    <div class="frieren-title">
+        <h1>FRIEREN</h1>
+        <h2>Select your character</h2>
+    </div>
+
+    <!-- LAYOUT -->
+    <div class="game-layout">
+
+        <!-- IZQUIERDA -->
+        <div class="left-panel">
+
+            <div class="slides">
+                <button class="slide selected" onclick="switchSrc(this, 'roca')"
+                    style="background-image: url('../src/img/roca.png');"></button>
+
+                <button class="slide" onclick="switchSrc(this, 'frieren')"
+                    style="background-image: url('../src/img/frieren.png');"></button>
+
+                <button class="slide" onclick="switchSrc(this, 'frieren')"
+                    style="background-image: url('../src/img/frieren.png');"></button>
+
+                <button class="slide" onclick="switchSrc(this, 'frieren')"
+                    style="background-image: url('../src/img/frieren.png');"></button>
+
+                <button class="slide" onclick="switchSrc(this, 'frieren')"
+                    style="background-image: url('../src/img/frieren.png');"></button>
+            </div>
+
+            <!-- BOTON SELECT -->
+            <button class="select-button" onclick="selectCharacter()">
+                SELECT
+            </button>
+
+        </div>
+
+        <!-- DERECHA -->
+        <div class="right-panel">
+            <model-viewer alt="Scene 3d" src="../src/models/glb/frieren.glb"
+                shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look"
+                camera-controls auto-rotate touch-action="pan-y">
+            </model-viewer>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script type="module">
+        const modelViewer = document.querySelector("model-viewer");
+
+        window.switchSrc = (element, name) => {
+            const base = "../src/models/glb/" + name;
+            modelViewer.src = base + '.glb';
+
+            document.querySelectorAll(".slide")
+                .forEach(el => el.classList.remove("selected"));
+
+            element.classList.add("selected");
+        };
+    </script>
+
+    <!-- BOTONES -->
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function selectCharacter() {
+            const selected = document.querySelector(".slide.selected");
+
+            if (!selected) {
+                alert("Selecciona un personaje primero");
+                return;
+            }
+
+            alert("Personaje seleccionado 🎮");
+        }
+    </script>
+
+    <!-- AUDIO -->
+    <audio loop autoplay>
+        <source src="../src/sounds/Audio.mpeg" type="audio/mpeg">
+    </audio>
+
+</body>
+
+</html>

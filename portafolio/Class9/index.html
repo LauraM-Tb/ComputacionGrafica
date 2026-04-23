@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Game</title>
     <link rel="stylesheet" href="../Class9/src/css/main.css">
+    
 
 </head>
 
@@ -19,13 +20,28 @@
     </div>
 
     <main>
-        <button><span>Resume</span></button>
-        <button>New Game</button>
-        <button>Start</button>
+
+        <button onclick="location.href='../Class9/viewer/level1.html'">
+            <span>New Game</span>
+        </button>
+
+        <button onclick="location.href='../Class9/viewer/characters.html'">
+            <span>Characters</span>
+        </button>
+
+        <button onclick="location.href='../Class9/viewer/settings.html'">
+            <span>Settings</span>
+        </button>
+
+        <button onclick="location.href='/index.html'">
+            <span>Exit</span>
+        </button>
+
     </main>
 
-    <audio id="bgMusic" loop>
-        <source src="../Class9/src/sounds/Audio.mpeg" type="audio/mpeg">
+    <audio loop autoplay id="miAudio">
+        <source src="./src/sounds/Audio.mpeg" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
 
     <script src="./src/js/main.js"></script>
