@@ -40,7 +40,7 @@ html {
 body {
 	position: relative;
 	margin: auto;
-	background: #181620;
+	background: radial-gradient(circle at center, #9fc2da 0%, #6f95b0 100%);
 	perspective: 500px;
 }
 
