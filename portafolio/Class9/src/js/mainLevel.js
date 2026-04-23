@@ -78,9 +78,9 @@ function setControls(key) {
 const loader = new GLTFLoader();
 // Optional: Provide a DRACOLoader instance to decode compressed mesh data
 const dracoLoader = new DRACOLoader();
-dracoLoader.setDecoderPath( '/src/models/glb/' );
+dracoLoader.setDecoderPath( '/portafolio/Class9/src/models/glb/' );
 loader.setDRACOLoader( dracoLoader );
-const gltf = await loader.loadAsync( '/src/models/glb/interior.glb' );
+const gltf = await loader.loadAsync( '/portafolio/Class9/src/models/glb/scene.glb' );
 gltf.scene.position.set(0, -2.5, 3.5);
 gltf.scene.rotation.y = Math.PI*1.5; // Rota 180 grados en el eje Y
 scene.add( gltf.scene );
